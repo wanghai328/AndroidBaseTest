@@ -9,11 +9,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:networkSecurityConfig="@xml/network_config"
         android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -24,6 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".binder.ServerActivity" />
+        <activity
+            android:name=".binder.ClientActivity"
+            android:process=":test" />
         <activity android:name=".service.AActivity" />
         <activity android:name=".service.BActivity" />
         <activity android:name=".service.ServiceTestActivity" />
@@ -40,20 +44,21 @@
         <activity
             android:name=".launch_mode.D"
             android:launchMode="standard"
-             android:taskAffinity="com.test"/>
+            android:taskAffinity="com.test" />
         <activity
             android:name=".launch_mode.C"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop" />
         <activity
             android:name=".launch_mode.B"
             android:launchMode="singleTask"
-            android:taskAffinity="com.test1111"  />
+            android:taskAffinity="com.test1111" />
         <activity
             android:name=".launch_mode.A"
-            android:launchMode="singleInstance"/>
+            android:launchMode="singleInstance" />
 
-        <service android:name=".service.TestFirstService"/>
-        <service android:name=".service.TestSecondService"/>
+        <service android:name=".service.TestFirstService" />
+        <service android:name=".service.TestSecondService" />
+
         <receiver
             android:name=".broadcast.NetworkConnectChangedReceiver"
             android:enabled="true"
@@ -63,13 +68,13 @@
             </intent-filter>
         </receiver>
 
-<!--        <receiver-->
-<!--            android:name=".broadcast.MyReceiver"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="com.test.wh"/>-->
-<!--            </intent-filter>-->
-<!--        </receiver>-->
+        <!--        <receiver-->
+        <!--            android:name=".broadcast.MyReceiver"-->
+        <!--            android:exported="true">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="com.test.wh"/>-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
     </application>
 
 </manifest>
