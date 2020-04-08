@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource xmlns:android="http://schemas.android.com/apk/res/android">
+    <paths>
+        <root-path path="" name="rootpath"/>
+        <!--代表与Context.getFileDir()相同的文件路径-->
+        <files-path path="files" name="files" />
+        <!--代表与getCacheDir()相同的文件路径-->
+        <cache-path path="files" name="cache" />
+        <!--代表与Environment.getExternalStorageDirectory()相同的文件路径-->
+        <external-path path="files" name="external" />
+        <!--代表与Context.getExternalFilesDir(String) 和Context.getExternalFilesDir(null)相同的文件路径-->
+        <external-files-path path="files" name="externalfiles"/>
+        <!--代表与Context.getExternalCacheDir()相同的文件路径-->
+        <!-- 此标签需要 support 25.0.0以上才可以使用-->
+        <external-cache-path  path="files" name="externalcache"/>
+    </paths>
+</resource>
