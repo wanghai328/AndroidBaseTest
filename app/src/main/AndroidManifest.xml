@@ -58,6 +58,7 @@
 
         <service android:name=".service.TestFirstService" />
         <service android:name=".service.TestSecondService" />
+        <service android:name=".binder.BinderPoolService" />
 
         <receiver
             android:name=".broadcast.NetworkConnectChangedReceiver"

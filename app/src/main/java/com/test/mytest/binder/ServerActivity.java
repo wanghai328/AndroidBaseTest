@@ -26,7 +26,7 @@ public class ServerActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn1:
                 Intent intent = new Intent(this, BinderPoolService.class);
-                intent.putExtra("name", "zhangSan");
+                intent.putExtra("name", "ZhangSan");
                 startService(intent);
                 break;
             case R.id.btn2:

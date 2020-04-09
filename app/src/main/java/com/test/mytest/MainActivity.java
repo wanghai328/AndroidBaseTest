@@ -24,6 +24,7 @@ import android.widget.RemoteViews;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
+import com.test.mytest.binder.ServerActivity;
 import com.test.mytest.broadcast.BroadcastActivity;
 import com.test.mytest.broadcast.NetworkConnectChangedReceiver;
 import com.test.mytest.glide.GlideTestActivity;
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements QueryView, View.O
         findViewById(R.id.btn12).setOnClickListener(this);
         findViewById(R.id.btn13).setOnClickListener(this);
         findViewById(R.id.btn14).setOnClickListener(this);
+        findViewById(R.id.btn15).setOnClickListener(this);
 
 
     }
@@ -221,18 +223,9 @@ public class MainActivity extends AppCompatActivity implements QueryView, View.O
             case R.id.btn14:
                 startActivity(new Intent(MainActivity.this, AActivity.class));
                 break;
+            case R.id.btn15:
+                startActivity(new Intent(MainActivity.this, ServerActivity.class));
+                break;
         }
-    }
-
-    @Override
-    public void onTrimMemory(int level) {
-        super.onTrimMemory(level);
-        Log.d("123","===========MainActivity onTrimMemory============ "+level);
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        Log.d("123","===========MainActivity onLowMemory============ ");
     }
 }
