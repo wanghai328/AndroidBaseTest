@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,6 +39,8 @@ public class MyProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
+
+        Log.e("123","------MyProvider onCreate-------");
         mContext = getContext();
         mDBHelper = new DBHelper(mContext);
         db = mDBHelper.getWritableDatabase();
@@ -65,19 +68,15 @@ public class MyProvider extends ContentProvider {
 //        System.out.println(personid);
 
         // 查询数据
+        Log.d("123","-------MyProvider query--------");
         return db.query(table, projection, selection, selectionArgs, null, null, sortOrder, null);
-    }
-
-    @Nullable
-    @Override
-    public String getType(@NonNull Uri uri) {
-        return null;
     }
 
     @Nullable
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
 
+        Log.d("123","-------MyProvider insert--------");
         String table = getTableName(uri);
         db.insert(table, null, values);
         // 当该URI的ContentProvider数据发生变化时，通知外界（即访问该ContentProvider数据的访问者）
@@ -86,6 +85,12 @@ public class MyProvider extends ContentProvider {
 //        long personid = ContentUris.parseId(uri);
 //        System.out.println(personid);
         return uri;
+    }
+
+    @Nullable
+    @Override
+    public String getType(@NonNull Uri uri) {
+        return null;
     }
 
     @Override
