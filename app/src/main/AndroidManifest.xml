@@ -17,6 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <provider
+            android:authorities="com.test.mytest"
+            android:name=".contentprovider.MyProvider"
+            android:exported="true"/>
         <receiver
             android:name=".broadcast.NetworkConnectChangedReceiver"
             android:enabled="true"
