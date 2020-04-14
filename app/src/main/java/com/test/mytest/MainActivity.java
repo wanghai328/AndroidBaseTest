@@ -3,7 +3,6 @@ package com.test.mytest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.app.LauncherActivity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,13 +12,8 @@ import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.MessageQueue;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewStub;
-import android.widget.Button;
 import android.widget.RemoteViews;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -29,19 +23,16 @@ import com.test.mytest.broadcast.BroadcastActivity;
 import com.test.mytest.broadcast.NetworkConnectChangedReceiver;
 import com.test.mytest.glide.GlideTestActivity;
 import com.test.mytest.handler.HandlerTestActivity;
-import com.test.mytest.launch_mode.A;
 import com.test.mytest.launch_mode.D;
 import com.test.mytest.leak.LeakTestActivity;
+import com.test.mytest.mvp.QueryView;
 import com.test.mytest.okhttp.OkHttpTestActivity;
 import com.test.mytest.quote.QuoteTestActivity;
+import com.test.mytest.rxjava.RxJavaTestActivity;
 import com.test.mytest.service.AActivity;
 import com.test.mytest.service.ServiceTestActivity;
 import com.test.mytest.test.ViewStubTestActivity;
 import com.test.mytest.webview.WebViewTestActivity;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity implements QueryView, View.OnClickListener {
 
@@ -67,8 +58,8 @@ public class MainActivity extends AppCompatActivity implements QueryView, View.O
 
 
         int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-        Log.d("123","最大可用内存： "+maxMemory+"kb");
-        Toast.makeText(this,"最大可用内存： "+maxMemory+"Kb",Toast.LENGTH_LONG).show();
+        Log.d("123", "最大可用内存： " + maxMemory + "kb");
+        Toast.makeText(this, "最大可用内存： " + maxMemory + "Kb", Toast.LENGTH_LONG).show();
         init();
 
         cardView = findViewById(R.id.card_view);
@@ -178,19 +169,19 @@ public class MainActivity extends AppCompatActivity implements QueryView, View.O
     @Override
     public void onClick(View v) {
 
-                Log.d("123","=====onClick====");
+        Log.d("123", "=====onClick====");
         switch (v.getId()) {
             case R.id.btn:
-                startActivity(new Intent(MainActivity.this, ViewSlideActivity.class));
                 break;
             case R.id.btn2:
                 startActivity(new Intent(MainActivity.this, HorizontalTestActivity.class));
 
                 break;
             case R.id.btn3:
-
+                startActivity(new Intent(MainActivity.this, RxJavaTestActivity.class));
                 break;
-            case R.id.btn4: Log.d("123","=====btn3====");
+            case R.id.btn4:
+                Log.d("123", "=====btn3====");
                 startActivity(new Intent(MainActivity.this, D.class));
                 break;
             case R.id.btn5:

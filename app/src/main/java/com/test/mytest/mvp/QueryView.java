@@ -1,4 +1,4 @@
-package com.test.mytest;
+package com.test.mytest.mvp;
 
 public interface QueryView {
     void onQueryResult(String result);

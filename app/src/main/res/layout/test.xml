@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.test.mytest.HorizontalView
+    <com.test.mytest.view.HorizontalView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ListView
@@ -15,5 +15,5 @@
             android:id="@+id/lv_two"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    </com.test.mytest.HorizontalView>
+    </com.test.mytest.view.HorizontalView>
 </LinearLayout>

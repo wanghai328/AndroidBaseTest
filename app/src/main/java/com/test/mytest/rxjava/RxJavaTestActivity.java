@@ -1,10 +1,12 @@
-package com.test.mytest;
+package com.test.mytest.rxjava;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import com.test.mytest.R;
 
 import rx.Observer;
 import rx.Subscriber;
@@ -15,6 +17,8 @@ public class RxJavaTestActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_rxjava);
 
         Subscriber subscriber = new Subscriber() {
             @Override

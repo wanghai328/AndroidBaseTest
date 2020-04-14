@@ -18,9 +18,9 @@
         android:theme="@style/AppTheme">
 
         <provider
-            android:authorities="com.test.mytest"
             android:name=".contentprovider.MyProvider"
-            android:exported="true"/>
+            android:authorities="com.test.mytest"
+            android:exported="true" />
         <receiver
             android:name=".broadcast.NetworkConnectChangedReceiver"
             android:enabled="true"
@@ -66,6 +66,7 @@
             android:process=":test" />
         <activity android:name=".service.AActivity" />
         <activity android:name=".service.BActivity" />
+        <activity android:name=".rxjava.RxJavaTestActivity" />
         <activity android:name=".service.ServiceTestActivity" />
         <activity android:name=".broadcast.BroadcastActivity" />
         <activity android:name=".okhttp.OkHttpTestActivity" />
@@ -74,7 +75,6 @@
         <activity android:name=".handler.HandlerTestActivity" />
         <activity android:name=".leak.LeakTestActivity" />
         <activity android:name=".quote.QuoteTestActivity" />
-        <activity android:name=".ViewSlideActivity" />
         <activity android:name=".HorizontalTestActivity" />
         <activity android:name=".test.ViewStubTestActivity" />
         <activity
